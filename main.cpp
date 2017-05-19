@@ -6,6 +6,7 @@
 #include "Pintura.h"
 #include "Literatura.h"
 #include "DisArq.h"
+#include <stdlib.h>
 
 using namespace std;
 string generarID();
@@ -14,7 +15,7 @@ int main(){
 
 	int opc, opcObras;
 	double peso;
-	string fecha, autor, epoca, genero, nombre_obra, material, tipo, lienzo, tec, search, ID="HD";
+	string fecha, autor, epoca, genero, nombre_obra, material, tipo, lienzo, tec, search, ID="";
 	vector<Obras*> obras;
 	vector <Obras*> transferidos;
 	cout << "----------Museo de Arte Británico----------" << endl;
@@ -37,6 +38,16 @@ int main(){
 			cin >> nombre_obra;
 			cout << endl << "Que tipo de Obra quiere agregar?:\n1.Literatura\n2.Escultura\n3.Arquitectura\n4.Pintura: ";
 			cin >> opcObras;
+			
+			//GENERAR ID
+			ID = generarID();
+			 for (int i=0; i < obras.size(); i++){
+            if (ID==obras[i]->getID()){
+					ID= generarID();
+					i=0;
+				}
+         }
+
 			
 			if(opcObras==1){//LITERATURA
 				cout << endl << "Ingrese genero literario: ";
@@ -175,9 +186,15 @@ return 0;
 }
 
 string generarID(){
+	int num;
+	string numero = "";
+	string hexa[16] = {"A","B","C","D","E","F","1","2","3","4","5","6","7","8","9"};
 
-	string letras[] = {"A","B","C","D","E","F"};
-	int numeros[] = {0,1,2,3,4,5,6,7,8,9};
+	for(int i=0; i<6; i++){
+		num = rand()%16;
+		numero = numero + hexa[num];
+	}
 
+return numero;
 	
 }
