@@ -109,8 +109,29 @@ int main(){
 		case 3: //GENERAR REPORTE NORMAL
 			cout << "----REPORTE INVENTARIO DEL MUSEO-----" << endl << endl;
 			for (int i=0; i < obras.size(); i++){
-            cout << i <<<"." << obras[i]->getID() << " " << obras[i]->getNombre() << " " << obras[i]->getFecha() << " " << obras[i]->getAutor() << endl;
-         }//FIN GENERAR REPORTE
+            cout << i << "." << obras[i]->getID() << " " << obras[i]->getNombre() << " " << obras[i]->getFecha() << " " << obras[i]->getAutor() << endl;
+         }
+		//FIN GENERAR REPORTE
+		break;
+
+		case 4://TRANSFERIR A OTRO MUSEO
+			cout << "-----------TRANSFERENCIA--------" << endl << endl;
+			int postrans;
+			for (int i=0; i < obras.size(); i++){
+            cout << i << "." << obras[i]->getID() << " " << obras[i]->getNombre() << " " << obras[i]->getFecha() << " " << obras[i]->getAutor() << endl;
+			}
+			cout << "Que posición desea transferir? ";
+			cin >> postrans;
+
+			if (postrans<0 || postrans >= obras.size())
+				cout << "POSICION INEXISTENTE";
+			else{
+				transferidos.push_back(obras[postrans]);
+				obras.erase(postrans+obras.begin());
+				cout << "TRANSFERENCIA HECHA!!" << endl << endl;
+			}
+		//FIN TRANSFERIR A OTRO MUSEO
+		break;
 
 		
 
