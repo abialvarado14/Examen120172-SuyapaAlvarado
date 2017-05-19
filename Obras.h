@@ -7,14 +7,14 @@ class Obras{
 	protected:
 		int ID;
 		string Nombre;
-		int Fecha;
+		string Fecha;
 		string Autor;
 
 	public:
-		Obras(int, string, int, string);
+		Obras(int, string, string, string);
 		int getID();
 		string getNombre();
-		int getFecha();
+		string getFecha();
 		string getAutor();
 
 

@@ -1,6 +1,6 @@
 #include "Pintura.h"
 
-Pintura::Pintura( string Lienzo,  string Tecnica, int ID, string Nombre, int Fecha, string Autor) : Obras(ID, Nombre, Fecha, Autor) {
+Pintura::Pintura( string Lienzo,  string Tecnica, int ID, string Nombre, string Fecha, string Autor) : Obras(ID, Nombre, Fecha, Autor) {
 	this-> Lienzo=Lienzo;
 	this-> Tecnica=Tecnica;
 	this-> ID=ID;
