@@ -11,7 +11,7 @@ class Pintura : public Obras{
 		string Tecnica;
 
 	public:
-		Pintura(string, string, int, string, string, string);
+		Pintura(string, string, string, string, string, string);
 		string getLienzo();
 		string getTecnica();
 

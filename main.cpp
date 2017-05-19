@@ -8,20 +8,20 @@
 #include "DisArq.h"
 
 using namespace std;
-int generarID();
+string generarID();
 
 int main(){
 
-	int opc, opcObras, ID=2;
+	int opc, opcObras;
 	double peso;
-	string fecha, autor, epoca, genero, nombre_obra, material, tipo, lienzo, tec;
+	string fecha, autor, epoca, genero, nombre_obra, material, tipo, lienzo, tec, search, ID="HD";
 	vector<Obras*> obras;
 	vector <Obras*> transferidos;
 	cout << "----------Museo de Arte Británico----------" << endl;
 	
-	while (opc!=5){
+	while (opc!=7){
 	
-		cout << "\nIngrese la opción que desea:\n1.Agregar\n2.Eliminar\n3.Generar Reporte\n4.Transferir a otro Museo\n5.Generar reporte de Obras transferidas\n6.Buscar: ";
+		cout << "\nIngrese la opción que desea:\n1.Agregar\n2.Eliminar\n3.Generar Reporte\n4.Transferir a otro Museo\n5.Generar reporte de Obras transferidas\n6.Buscar:\n7.Salir ";
 		cin >> opc;
 
 	switch(opc){//MENU PRINCIPAL
@@ -133,6 +133,34 @@ int main(){
 		//FIN TRANSFERIR A OTRO MUSEO
 		break;
 
+	case 5: //REPORTE DE TRANSFERENCIA
+		cout << "--------REPORTE DE TRANSFERENCIA-----" << endl << endl;
+
+		for (int i=0; i < transferidos.size(); i++){
+            cout << i << "." << transferidos[i]->getID() << " " << transferidos[i]->getNombre() << " " << transferidos[i]->getFecha() << " " << transferidos[i]->getAutor() << endl;
+         }
+
+	//FIN REPORTE TRANSFERENCIA
+	break;
+
+	case 6: //BUSCAR
+		cout << "Ingrese el nombre del autor que desea buscar: ";		
+		cin >> search;
+		int cont=0;
+		
+		for (int i=0; i < obras.size(); i++){
+			if (obras[i]->getAutor()== search){
+   	   cout << obras[i]->getNombre() << endl;
+			cont++;
+			}
+  		  }
+	    
+		if (cont==0)
+			cout << "No hay obras de ese autor";
+
+	//FIN BUSCAR
+	break;
+
 		
 
 		
@@ -146,6 +174,10 @@ int main(){
 return 0;
 }
 
-int generarID(){
+string generarID(){
+
+	string letras[] = {"A","B","C","D","E","F"};
+	int numeros[] = {0,1,2,3,4,5,6,7,8,9};
+
 	
 }

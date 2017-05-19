@@ -11,7 +11,7 @@ class Escultura : public Obras{
 		string material;
 
 	public:
-		Escultura(double, string, int, string, string, string);
+		Escultura(double, string, string, string, string, string);
 		double getpeso();
 		string getmaterial();
 

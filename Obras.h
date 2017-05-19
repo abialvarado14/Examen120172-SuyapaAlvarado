@@ -5,14 +5,14 @@ using namespace std;
 class Obras{
 
 	protected:
-		int ID;
+		string ID;
 		string Nombre;
 		string Fecha;
 		string Autor;
 
 	public:
-		Obras(int, string, string, string);
-		int getID();
+		Obras(string, string, string, string);
+		string getID();
 		string getNombre();
 		string getFecha();
 		string getAutor();

@@ -11,7 +11,7 @@ class DisArq : public Obras{
 		string Tipo_terreno;
 
 	public:
-		DisArq(string, int, string, string, string);
+		DisArq(string, string, string, string, string);
 		string getTipo_terreno();
 	
 

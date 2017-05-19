@@ -1,7 +1,7 @@
 #include "Obras.h"
 
 
-Obras::Obras( int ID,  string Nombre,  string Fecha,  string Autor) {
+Obras::Obras( string ID,  string Nombre,  string Fecha,  string Autor) {
 	this-> ID=ID;
 	this-> Nombre=Nombre;
 	this-> Fecha=Fecha;
@@ -9,7 +9,7 @@ Obras::Obras( int ID,  string Nombre,  string Fecha,  string Autor) {
 }
 
 
-int Obras::getID(){
+string Obras::getID(){
 
 	return ID;
 }	

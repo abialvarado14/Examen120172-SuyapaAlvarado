@@ -12,7 +12,7 @@ class Literatura : public Obras{
 
 
 	public:
-		Literatura(string, string, int, string, string, string);
+		Literatura(string, string, string, string, string, string);
 		string getGenero();
 		string getEpoca();
 
